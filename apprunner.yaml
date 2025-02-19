@@ -3,9 +3,10 @@ runtime: python311
 build:
   commands:
     build:
-      - echo "Build command..."
+      - poetry install
+
 run:
-  runtime-version: 3.11
+  runtime-version: 3.11.9
   pre-run:
     - echo "Installing dependencies..."
     - pip3 install poetry
