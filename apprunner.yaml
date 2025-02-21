@@ -1,11 +1,15 @@
 version: 1.0
-runtime: python3
+runtime: python311
 build:
   commands:
     build:
-      - pip install --upgrade pip
-      - pip install -r requirements.txt
-run: 
+      - pip3 install --upgrade pip3
+      - pip3 install -r requirements.txt
+run:
+  runtime-version: 3.11
+  # pre-run:
+  #   - pip3 install --upgrade pip3
+  #   - pip3 install -r requirements.txt
   # command: python main.py
   command: uvicorn main:app --host 0.0.0.0 --port 8080
   env:
